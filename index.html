@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <title>English random</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK&display=swap" rel="stylesheet">
+    <title>Random Eng</title>
 
     <style>
         body{
             font-family: 'Noto Sans HK', sans-serif;
+            /* font-family: 'Ma Shan Zheng', cursive; */
+            /* font-family: 'Noto Sans HK', sans-serif; */
         }
         #head_line{margin-top: 20px;}
         .material-symbols-outlined {
@@ -42,28 +46,63 @@
             color: #ffffff;
             display: none;
             float: left;
+
+            position: absolute;
+            /* transition-duration: 1s; */
+            top: 0%;
+            z-index: 999;
+        }
+        #b{
+            color: #ffffff;
+            display: none;
+            float: left;
+
+            position: absolute;
+            top: 0%;
+            margin-left: -140px;
+            z-index: 999;
         }
         #back{
             display: none;
             float: left;
-            margin-right: 20px;
-            margin-top: 0px;
-            font-size: 26px;
+            /* margin-right: 20px; */
+            /* margin-top: 0px; */
             
             color: #ffffff;
+            
+            position: absolute;
+            /* top: 0%; */
+            left: 76%;
+            z-index: 999;
         }
+        #tree{
+            width: 100%;
+            display: none;
+
+            /* float: right; */
+            /* margin-right: -11px; */
+            /* margin-top: 11px; */
+            
+            position: absolute;
+            bottom: 0%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 1;
+        }
+        
         
         #start_btn{
             width: 200px;
             height: 50px;
             background-color: #ffffff;
-            font-size: 20px;
+            font-size: 24px;
             margin-top: 40px;
 
             border-radius: 20px;
             transition-duration: 0.4s;
 
             border: 3px solid #123B57;
+            /* color: #123B57; */
             
             position: absolute;
             top: 16%;
@@ -97,7 +136,7 @@
             bottom: 0%;
         }
         #unknow{
-            color:#e42232 ;
+            color:#e42232;
 
             display: none;
             position: absolute;
@@ -121,27 +160,79 @@
             left: 50%;
             transform: translate(-50%,-50%);
         }
+
+        #tu{
+            width: 60px;
+            position: absolute;
+            top: 35%;
+            left: 17%;
+            transform: translate(-50%,-50%);
+
+            z-index: 999;
+            display: none;
+        }
+        #dog{
+            width: 80px;
+            position: absolute;
+            top: 35%;
+            right: 0%;
+            transform: translate(-30%,-50%);
+            
+            z-index: 999;
+            display: none;
+        }
+
+        #for_know_number{
+            color: #8be746;
+
+            position: absolute;
+            /* margin-left: 10px; */
+            float: left;
+            left: 10%;
+            bottom: 0%;
+        }
+        #for_unknow_number{
+            /* display: none; */
+            color: #e42232;
+
+            position: absolute;
+            margin-right: 10px;
+            float: right;
+            bottom: 0%;
+            right: 10%;
+        }
     </style>
 </head>
 <body id="background_color">
     <div id="head_line">
         <div id="other_page">
-            <h1 id="title_page" style="border-left: 10px solid #123B57;">&nbsp;&nbsp;Random word</h1>
-            <a href="study_resource.html"><h1 id="a">Home</h1></a>
-            <h1 id="back">Back</h1>
+            <h1 id="title_page" style="border-left: 10px solid #123B57;">&nbsp;&nbsp;Random Eng</h1>
+            <div id="move_choose">
+                <!-- <a href="https://infinitymark.github.io/check_classical_chinese_final.github.io/"><h1 id="a">查字词</h1></a>
+                <a href="https://infinitymark.github.io/article.github.io/"><h1 id="b">课文</h1></a> -->
+                <h1 id="back">Back</h1>    
+            </div>    
+            <img src="https://raw.githubusercontent.com/infinityMark/-infinityMark.github.io/main/tree.png" alt="" id="tree">
         </div>
         <span class="material-symbols-outlined" id="night">dark_mode</span>
         <span class="material-symbols-outlined" id="light">light_mode</span>
     </div>
 
-    <button id="start_btn" onclick="start_random()">Come on</button>
+    <button id="start_btn" onclick="start_random()">Come</button>
+    <img src="https://raw.githubusercontent.com/infinityMark/-infinityMark.github.io/main/tu.png" alt="" id="tu">
+    <img src="https://raw.githubusercontent.com/infinityMark/-infinityMark.github.io/main/bulue_dog.png" alt="" id="dog">
     <div id="the_final_return">
         <h1 id="random_c_chinese"></h1>
         <h1 id="random_c_chinese_translate"></h1>
         <h3 id="random_c_chinese_paragraphs"></h3>
         <h2 id="know">Know</h2>
-        <h2 id="next">Next</h2>
+        <h2 id="next">下一个</h2>
         <h2 id="unknow">Unknow</h2>
+    </div>
+    <div>
+        <h2 id="for_know_number"></h2>
+        <h2 id="know_unknow_company"></h2>
+        <h2 id="for_unknow_number"></h2>
     </div>
 
     <script>
@@ -149,12 +240,24 @@
         let light=document.getElementById("light")
         let title_page=document.getElementById("title_page")
         let background_color=document.getElementById("background_color")
+        let dog=document.getElementById("dog")
+        let tu=document.getElementById("tu")
         let time="1s"
         let white="#ffffff"
         let dark="#1c1c1c"
 
-        let start_btn=document.getElementById("start_btn")
+        if(window.innerWidth==394 || window.innerWidth==393){
+            tu.style.display="flex"
 
+            dog.style.display="flex"
+        }
+        if(window.innerWidth==390 || window.innerWidth==391){
+            tu.style.display="flex"
+            tu.style.top="31%"
+        }
+
+        
+        let start_btn=document.getElementById("start_btn")
         night.addEventListener("click",function(){
             background_color.style.transitionDuration="1s"
             background_color.style.backgroundColor=dark
@@ -168,6 +271,7 @@
 
             start_btn.style.backgroundColor=dark
             start_btn.style.color=white
+
         })
         light.addEventListener("click",function(){
             background_color.style.transitionDuration="1s"
@@ -183,13 +287,12 @@
             start_btn.style.backgroundColor=white
             start_btn.style.color="#000000"
         })
-
+            
         function start_random(){
-            //         需要的函数      ,""
-            //  二维矩阵
-            // ["decide","paragliding","bicycle","trader","wonder","difference","umbrella","wet","enough","hungry","hill","junk","result","although",
-            //     "through","dentist","magazine","however","almost","none","outgoing","loudly","quietly","hard-working","fantastic","though","talented",
-            //     "truly","serious","mirror","necessary","grade","reach","arm","similar","primary","information","theater",]
+            //         需要的函数   
+            //  二维矩阵   [],
+            // ["","","","","","","","",""],
+
             let classical_chinese_list=[
                 //师说
                 ["decide","paragliding","bicycle","trader","wonder","difference","umbrella","wet","enough","hungry"],
@@ -210,7 +313,7 @@
                 ["cabbage","daily","earthquake","favor"]
                 //岳阳楼记
             ]
-            
+
             let classical_chinese_traslate_list=[
                 //师说
                 ["决定","滑翔伞","自行车","商人","奇迹","差异","伞","湿","够了","饿了"],
@@ -233,37 +336,36 @@
                 //岳阳楼记
             ]
             
-            let random_c_chinese_paragraphs_list=[
-                //师说
-                ["孰能无惑","固先乎吾","固先乎吾","其闻道也","夫庸知其年之先后","嗟乎！师道之不传也久矣！","嗟乎！师道之不传也久矣！","其出人也远矣","犹且从师而问焉","其下圣人也亦远矣","而耻学于师","是故圣益圣","是故圣益圣","其皆出于此乎？","于其身也，则耻师焉","惑矣！","彼童子之师",
-                "授之书而习其句读者","非吾所谓传其道解其惑者也","小学而大遗"],
-                ["吾未见其明也","不耻相师","彼与彼年相若也，道相似也","位卑则足羞","位卑则足羞","官盛则近谀","师道之不复，可知矣","巫医乐师百工之人，君子不齿","今其智乃反不能及","圣人无常师","郯子之徒，其贤不及孔子","师不必贤于弟子",
-                "闻道有先后，术业有专攻","好古文","六艺经传皆通习之","学于余","余嘉其能行古道","作《师说》以贻之",],
-                [],
-                [],
-                [],
-                [],
-                [],
-                [],
-                [],
-                [],
-                //岳阳楼记
-            ]
             //测试
-            // let test_time=parseInt(13) 
-            // console.log(classical_chinese_list[test_time].length)   
-            // console.log(classical_chinese_traslate_list[test_time].length)
+            // let test_time=parseInt(11)
+            // console.log(classical_chinese_list.length)
+            // console.log(classical_chinese_traslate_list.length)
             // console.log(random_c_chinese_paragraphs_list.length)
             
-            let begin_choose=parseInt((Math.random())*14)
-            let classical_chinese_list_number=classical_chinese_list.length
+            //test random
+            // for (let index = 0; index <50; index++) {
+            //     console.log(parseInt(Math.random()*50))
+            // }
+            if(classical_chinese_list.length==classical_chinese_traslate_list.length){
+                console.log("0至"+(classical_chinese_list.length-1))
+                console.log("全部List数字都是一样")
+                for(let i=0;i<=classical_chinese_list.length-1;i++){
+                    console.log(classical_chinese_list[i].length)
+                    // console.log(classical_chinese_traslate_list[i].length)
+                    // console.log(random_c_chinese_paragraphs_list[i].length)
+                }
+            }
+            
+            // 0至10的数
+            let begin_choose=parseInt((Math.random())*13)
+            // let classical_chinese_list_number=classical_chinese_list.length
             // let multiple=String(classical_chinese_list_number).length
             // let ten_multiple=(multiple)*10
-            let ten_multiple=10
+            let ten_multiple=13
             let random_number=parseInt(Math.random()*ten_multiple)
             // let test_number=parseInt((Math.random())*100)
             // let random_number=classical_chinese_list_number-test_number
-            console.log(begin_choose)
+            // console.log(begin_choose)
             // console.log(random_number)
 
             let random_c_chinese_translate=document.getElementById("random_c_chinese_translate")
@@ -274,42 +376,40 @@
             let the_final_return=document.getElementById("the_final_return")
             let start_btn=document.getElementById("start_btn")
             let random_c_chinese_paragraphs=document.getElementById("random_c_chinese_paragraphs")
-            let time="1s"
-            
+            let time="1s"            
             random_c_chinese_translate.style.display="none"
 
+            // setTimeout(try_a,1000)
+            // function try_a() {
+            //     // start_btn.style.transitionDuration=time
+            //     start_btn.style.color=white
+            //     start_btn.style.backgroundColor="#123B57"    
+            // }
+            
             know.style.display="flex"
             unknow.style.display="flex"
             the_final_return.style.display="block"
             start_btn.style.transitionDuration=time
-            start_btn.innerText="Next"
+            start_btn.innerText="下一个"
             
             random_c_chinese.innerText=classical_chinese_list[begin_choose][random_number]
-            // random_c_chinese_paragraphs.innerText=random_c_chinese_paragraphs_list[begin_choose][random_number]
 
             random_c_chinese_paragraphs.style.transitionDuration=time
             random_c_chinese_paragraphs.style.marginTop="50px"
-            
+            // classical_chinese_traslate_list.splice(classical_chinese_traslate_list[random_number],1)
+            // random_c_chinese_paragraphs_list.splice(random_c_chinese_paragraphs_list[random_number],1)
+            // console.log(classical_chinese_list)
+            // random_c_chinese_translate.style.display="none"
+
             know.addEventListener("click",function(){
                 the_final_return.style.transitionDuration=time
-                the_final_return.style.rotate="-20deg"
-
-                setTimeout(test,1000)
-                function test(){
-                    random_c_chinese_translate.style.display="flex"
-                    random_c_chinese_translate.style.justifyContent="center"
-                    random_c_chinese_translate.style.alignItems="center"
-                    // random_c_chinese_translate.style.alignItems="center"
-                    random_c_chinese_translate.innerText=classical_chinese_traslate_list[begin_choose][random_number]
-                    the_final_return.style.transitionDuration=time
-                    the_final_return.style.rotate="0deg"    
-                }
-                // next.style.display="flex"
-            })
-            unknow.addEventListener("click",function(){
-                // next.style.display="flex"
-                the_final_return.style.transitionDuration=time
                 the_final_return.style.rotate="20deg"
+                for_know_number.style.display="inline" 
+                
+                know.style.transitionDuration=time
+                know.style.display="none"
+                unknow.style.transitionDuration=time
+                unknow.style.display="none"               
 
                 setTimeout(test,1000)
                 function test(){
@@ -322,18 +422,62 @@
                     the_final_return.style.transitionDuration=time
                     the_final_return.style.rotate="0deg"
                 }
-            })
-            // classical_chinese_traslate_list.splice(classical_chinese_traslate_list[random_number],1)
-            // random_c_chinese_paragraphs_list.splice(random_c_chinese_paragraphs_list[random_number],1)
-            // console.log(classical_chinese_list)
-            // random_c_chinese_translate.style.display="none"
+                // next.style.display="flex"
+        })
+        unknow.addEventListener("click",function(){
+                // next.style.display="flex"
+                the_final_return.style.transitionDuration=time
+                the_final_return.style.rotate="20deg"
+                for_unknow_number.style.display="inline"
+
+                know.style.transitionDuration=time
+                know.style.display="none"
+
+                unknow.style.transitionDuration=time
+                unknow.style.display="none"
+                setTimeout(test,1000)
+                function test(){
+                    random_c_chinese_translate.style.display="flex"
+                    random_c_chinese_translate.style.justifyContent="center"
+                    random_c_chinese_translate.style.alignItems="center"
+
+                    random_c_chinese_translate.style.display="block"
+                    random_c_chinese_translate.innerText=classical_chinese_traslate_list[begin_choose][random_number]
+                    the_final_return.style.transitionDuration=time
+                    the_final_return.style.rotate="0deg"    
+                }
+        })
         }
 
+        let for_know_number=document.getElementById("for_know_number")
+        let for_unknow_number=document.getElementById("for_unknow_number")
+        let unknow_number=0
+        let know_number=0
+        let know_unknow_company=document.getElementById("know_unknow_company")
+            
+        know.addEventListener("click",function(){              
+                know_number=know_number+1
+                for_know_number.innerText=know_number
+                // console.log(know_number)
+                // next.style.display="flex"
+        })
+        unknow.addEventListener("click",function(){
+                // next.style.display="flex"
+                unknow_number=unknow_number+1
+                for_unknow_number.innerText=unknow_number
+        })
+
         let a=document.getElementById("a")
+        let b=document.getElementById("b")
         let back=document.getElementById("back")
         let the_final_return=document.getElementById("the_final_return")
+        let tree=document.getElementById("tree")
         title_page.addEventListener("click",function(){
             //切换回亮色模式
+            // if(the_final_return.style.display!="none"){
+            //     the_final_return.style.display="none"
+            // }
+            
             background_color.style.transitionDuration="1s"
             background_color.style.backgroundColor=white
             night.style.color="#000000"
@@ -343,21 +487,31 @@
             title_page.style.color="#000000"
             start_btn.style.backgroundColor=white
             start_btn.style.color="#000000"
-            back.style.transitionDuration="0.8s"
-            back.style.display="flex"
+
             title_page.style.transitionDuration=time
             title_page.style.color=white
             title_page.style.marginTop="100px"
-            title_page.style.fontSize="26px"
+            title_page.style.fontSize="36px"
 
-            // a.style.display="flex"
-            // a.style.marginTop="200px"
-            // a.style.marginLeft="-140px"
-
+            // a.style.transitionDuration=time
+            // a.style.display="block"
+            // // a.style.marginTop="200px"
             
+            // a.style.marginLeft="40px"
+            // b.style.marginLeft="40px"
+
+            // b.style.transitionDuration=time
+            // b.style.display="block"
+            
+
+            back.style.transitionDuration="0.8s"
+            back.style.display="flex"
             setTimeout(test,10)
             function test(){
-                back.style.marginTop="100px"     
+                back.style.marginTop="100px"
+                tree.style.bottom="-37%"    
+                // a.style.top="30%"
+                // b.style.top="40%"
             }
             back.style.float="right"
 
@@ -374,6 +528,22 @@
             
             the_final_return.style.transitionDuration=time
             the_final_return.style.display="none"
+
+            dog.style.display="none"
+            tu.style.display="none"
+
+            for_know_number.style.display="none"
+            for_unknow_number.style.display="none"
+
+            tree.style.display="flex"
+            tree.style.transitionDuration=time
+            setTimeout(trees,400)
+            function trees(){
+                   
+            }
+            // if(window.innerWidth==394 || window.innerWidth==393){
+            //     tree.style.marginBottom="-30px"
+            // }
         })
 
         back.addEventListener("click",function(){
@@ -393,11 +563,18 @@
             back.style.marginTop="0px"   
             setTimeout(test,500)
             function test(){
-                back.style.display="none"      
+                // back.style.top="0%"
+                back.style.display="none"
+                tree.style.marginTop="0px"
+                // a.style.top="0%"
+                // b.style.top="0%"
             }
             
             // a.style.transitionDuration=time
             // a.style.display="none"
+
+            // b.style.transitionDuration=time
+            // b.style.display="none"
 
             background_color.style.backgroundColor=white
 
@@ -413,6 +590,21 @@
             random_c_chinese_translate.style.position="absolute"
             random_c_chinese_translate.style.top="30%"
             random_c_chinese_translate.style.left="40%"
+
+            for_know_number.style.display="flex"
+            for_unknow_number.style.display="flex"
+
+            tree.style.display="none"
+            
+            if(window.innerWidth==394 || window.innerWidth==393){
+                tu.style.display="flex"
+                dog.style.display="flex"
+            }
+            if(window.innerWidth==391 || window.innerWidth==390){
+                tu.style.display="flex"
+                dog.style.display="none"
+                
+            }
         })
     </script>
 </body>
