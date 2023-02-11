@@ -242,7 +242,7 @@
         let background_color=document.getElementById("background_color")
         let dog=document.getElementById("dog")
         let tu=document.getElementById("tu")
-        let time="1s"
+        let time="0.4s"
         let white="#ffffff"
         let dark="#1c1c1c"
 
@@ -310,7 +310,8 @@
                 ["lettuce","autumn","celebrate","pepper","oven","plate","gravy","temperature","flu","available"],
                 ["hang","invite","accept","refuse","exam","forward","glad","preparation","glue","concert"],
                 ["headmaster","calendar","organize","chocolate","upset","advice","agent","expert","unless","certainly"],
-                ["cabbage","daily","earthquake","favor"]
+                ["cabbage","daily","earthquake","favor","ability","backward","cabbage","daily","earthquake","favor"],
+                ["gain","handle","ignore","ketchup","ladybug","maintain","nail","obey","pajamas",""]
                 //岳阳楼记
             ]
 
@@ -332,15 +333,15 @@
                 ["生菜","秋季","庆祝 verb","胡椒粉；辣椒粉","烤炉","碟子","肉汁 noun","温度；气温","感冒；流感 noun","可用的；可以获取的 adj"],
                 ["悬挂；挂下 verb","邀请 verb","接受 verb","拒绝 verb","考试 noun","转寄；发送 verb 向前；前进 adv","高兴；开心 adj","准备；准备工作 noun","胶水","音乐会"],
                 ["校长","日历；日程表","组织；筹备 verb","巧克力","伤心；失望 adj","劝告；建议 noun"," 经纪人；代理人","专家 noun","除非；如果不 conj","无疑；肯定；当然；行 adv"],
-                ["洋白菜；卷心菜 noun","日常的；每日的adv","地震 noun","帮助；偏爱verb"]
+                ["洋白菜；卷心菜 noun","日常的；每日的adv","地震 noun","帮助；偏爱verb","能力；才能","向后;发展缓慢的adj","洋白菜；卷心菜noun","日常的；每日的","地震","帮助；偏爱verb"],
+                ["获得；收益noun得到/到达verb","处理，对待verb","不理/忽视verb","番茄酱","瓢虫","保持;坚持","指甲；钉子noun钉住verb","服从","睡觉",""],
                 //岳阳楼记
             ]
             
             //测试
-            // let test_time=parseInt(11)
-            // console.log(classical_chinese_list.length)
-            // console.log(classical_chinese_traslate_list.length)
-            // console.log(random_c_chinese_paragraphs_list.length)
+            let test_time=parseInt()
+            console.log(classical_chinese_list.length)
+            console.log(classical_chinese_traslate_list.length)
             
             //test random
             // for (let index = 0; index <50; index++) {
@@ -357,7 +358,7 @@
             }
             
             // 0至10的数
-            let begin_choose=parseInt((Math.random())*13)
+            let begin_choose=parseInt((Math.random())*17)
             // let classical_chinese_list_number=classical_chinese_list.length
             // let multiple=String(classical_chinese_list_number).length
             // let ten_multiple=(multiple)*10
@@ -376,7 +377,7 @@
             let the_final_return=document.getElementById("the_final_return")
             let start_btn=document.getElementById("start_btn")
             let random_c_chinese_paragraphs=document.getElementById("random_c_chinese_paragraphs")
-            let time="1s"            
+            let time="0.4s"            
             random_c_chinese_translate.style.display="none"
 
             // setTimeout(try_a,1000)
@@ -403,7 +404,6 @@
 
             know.addEventListener("click",function(){
                 the_final_return.style.transitionDuration=time
-                the_final_return.style.rotate="20deg"
                 for_know_number.style.display="inline" 
                 
                 know.style.transitionDuration=time
@@ -420,14 +420,12 @@
                     random_c_chinese_translate.style.display="block"
                     random_c_chinese_translate.innerText=classical_chinese_traslate_list[begin_choose][random_number]
                     the_final_return.style.transitionDuration=time
-                    the_final_return.style.rotate="0deg"
                 }
                 // next.style.display="flex"
         })
         unknow.addEventListener("click",function(){
                 // next.style.display="flex"
                 the_final_return.style.transitionDuration=time
-                the_final_return.style.rotate="20deg"
                 for_unknow_number.style.display="inline"
 
                 know.style.transitionDuration=time
@@ -444,7 +442,6 @@
                     random_c_chinese_translate.style.display="block"
                     random_c_chinese_translate.innerText=classical_chinese_traslate_list[begin_choose][random_number]
                     the_final_return.style.transitionDuration=time
-                    the_final_return.style.rotate="0deg"    
                 }
         })
         }
